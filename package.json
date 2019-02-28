@@ -13,10 +13,10 @@
         "typescript": "3.3.3333"
     },
     "scripts": {
-        "start": "react-app-rewired start",
-        "build": "react-app-rewired build",
-        "test": "react-app-rewired test",
-        "eject": "react-app-rewired eject",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
         "lint": "eslint \"./src/**/*@(.js|.jsx|.ts|.tsx)\""
     },
     "browserslist": [
