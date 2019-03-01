@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Mindmap from '../src/index';
+import Mindmap from '../index';
 
 class App extends Component {
     public render(): JSX.Element {
