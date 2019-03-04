@@ -1,11 +1,19 @@
-import Editor, { StateProps } from './Editor';
+import Editor, { StateProps, DispatchProps } from './Editor';
 import { connect } from 'react-redux';
 import { AppState } from '../../store';
+import { increaseCount } from '../../store/editor/actions';
 
 const mapStateToProps = (state: AppState): StateProps => {
     return {
-        mindmapId: state.mindmap.id,
+        count: state.editor.count,
     };
 };
 
-export default connect<StateProps, {}, {}, AppState>(mapStateToProps)(Editor);
+const mapDispatchToProps = {
+    increaseCount,
+};
+
+export default connect<StateProps, DispatchProps, {}, AppState>(
+    mapStateToProps,
+    mapDispatchToProps
+)(Editor);

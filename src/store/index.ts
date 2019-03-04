@@ -1,8 +1,10 @@
 import { createStore, combineReducers, Store } from 'redux';
-import { mindmapReducer } from './mindmap/reducers';
+import { editorReducer } from './editor/reducers';
+import { nodesReducer } from './nodes/reducers';
 
 const rootReducer = combineReducers({
-    mindmap: mindmapReducer,
+    editor: editorReducer,
+    nodes: nodesReducer,
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
