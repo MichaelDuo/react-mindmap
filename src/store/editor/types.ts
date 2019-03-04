@@ -1,5 +1,6 @@
 export interface EditorState {
     count: number;
+    rootNodeId: string;
 }
 
 export const INCREASE = 'INCREASE';

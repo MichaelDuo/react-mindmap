@@ -1,7 +1,7 @@
 import { EditorState, ActionTypes, INCREASE } from './types';
-const initialState: EditorState = {
-    count: 1,
-};
+import fakeData from '../_fakeStates/editor';
+
+const initialState: EditorState = fakeData;
 
 export function editorReducer(
     state = initialState,
