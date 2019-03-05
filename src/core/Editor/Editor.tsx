@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Node from 'components/Node';
+import Svg from 'components/Svg';
 
 export interface StateProps {
     rootNodeId: string;
@@ -14,9 +15,9 @@ type Props = StateProps & DispatchProps;
 export default class Editor extends PureComponent<Props> {
     public render(): JSX.Element {
         return (
-            <div>
+            <Svg>
                 <Node id={this.props.rootNodeId} />
-            </div>
+            </Svg>
         );
     }
 }
