@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Node from 'components/Node';
 
 export interface StateProps {
     rootNodeId: string;
@@ -14,8 +15,7 @@ export default class Editor extends PureComponent<Props> {
     public render(): JSX.Element {
         return (
             <div>
-                <div>Editor, {this.props.rootNodeId}</div>
-                <button onClick={() => this.props.increaseCount()}>Test</button>
+                <Node id={this.props.rootNodeId} />
             </div>
         );
     }
