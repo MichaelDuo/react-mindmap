@@ -1,11 +1,11 @@
 import Editor, { StateProps, DispatchProps } from './Editor';
 import { connect } from 'react-redux';
-import { AppState } from '../../store';
-import { increaseCount } from '../../store/editor/actions';
+import { AppState } from 'store';
+import { increaseCount } from 'store/editor/actions';
 
 const mapStateToProps = (state: AppState): StateProps => {
     return {
-        count: state.editor.count,
+        rootNodeId: state.editor.rootNodeId,
     };
 };
 

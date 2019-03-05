@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 
 export interface StateProps {
-    count: number;
+    rootNodeId: string;
 }
 
 export interface DispatchProps {
@@ -14,7 +14,7 @@ export default class Editor extends PureComponent<Props> {
     public render(): JSX.Element {
         return (
             <div>
-                <div>Editor, {this.props.count}</div>
+                <div>Editor, {this.props.rootNodeId}</div>
                 <button onClick={() => this.props.increaseCount()}>Test</button>
             </div>
         );

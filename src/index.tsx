@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import configStore from './store';
-import Editor from './components/Editor';
+import configStore from 'store';
+import Editor from 'components/Editor';
 
 const store = configStore();
 
