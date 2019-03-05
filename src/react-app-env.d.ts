@@ -2,6 +2,8 @@
 /// <reference types="react" />
 /// <reference types="react-dom" />
 
+import { compose } from 'redux';
+
 declare namespace NodeJS {
     interface ProcessEnv {
         NODE_ENV: 'development' | 'production' | 'test';
@@ -61,4 +63,10 @@ declare module '*.module.scss' {
 declare module '*.module.sass' {
     const classes: { [key: string]: string };
     export default classes;
+}
+
+declare global {
+    interface Window {
+        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: typeof compose;
+    }
 }
