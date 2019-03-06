@@ -53,6 +53,7 @@
         "resolve": "1.10.0",
         "sass-loader": "7.1.0",
         "style-loader": "0.23.1",
+        "svg.js": "^2.7.1",
         "terser-webpack-plugin": "1.2.2",
         "typescript": "3.3.3333",
         "url-loader": "1.1.2",
