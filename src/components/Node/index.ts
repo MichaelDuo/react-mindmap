@@ -2,10 +2,11 @@ import Editor, { StateProps, OwnProps } from './Node';
 import { connect } from 'react-redux';
 import { AppState } from 'store';
 import { increaseCount } from 'store/editor/actions';
+import { TopicNode as ITopicNode } from 'store/nodes/types';
 
 const mapStateToProps = (state: AppState, ownProps: OwnProps): StateProps => {
     return {
-        properties: state.nodes[ownProps.id].properties,
+        node: state.nodes[ownProps.id] as ITopicNode,
     };
 };
 
