@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Node from 'components/Node';
+import TopicNode from 'components/TopicNode';
 import Svg from 'components/Svg';
 
 export interface StateProps {
@@ -13,11 +13,11 @@ export interface DispatchProps {
 type Props = StateProps & DispatchProps;
 
 export default class Editor extends PureComponent<Props> {
+    private getRootNode(): JSX.Element {
+        return <TopicNode id={this.props.rootNodeId} />;
+    }
+
     public render(): JSX.Element {
-        return (
-            <Svg>
-                <Node id={this.props.rootNodeId} />
-            </Svg>
-        );
+        return <Svg>{this.getRootNode()}</Svg>;
     }
 }

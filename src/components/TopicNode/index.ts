@@ -1,4 +1,5 @@
-import Editor, { StateProps, OwnProps } from './Node';
+import TopicNode, { StateProps, OwnProps } from './TopicNode';
+import NodeHoc from 'components/NodeHoc';
 import { connect } from 'react-redux';
 import { AppState } from 'store';
 import { increaseCount } from 'store/editor/actions';
@@ -14,7 +15,11 @@ const mapDispatchToProps = {
     increaseCount,
 };
 
-export default connect<StateProps, {}, OwnProps, AppState>(
+const connected = connect<StateProps, {}, OwnProps, AppState>(
     mapStateToProps,
     mapDispatchToProps
-)(Editor);
+)(TopicNode);
+
+export default NodeHoc(
+    (connected as unknown) as React.ComponentClass
+) as typeof connected;
