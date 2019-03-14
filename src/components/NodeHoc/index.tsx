@@ -1,19 +1,24 @@
-import React, { Component } from 'react';
-import Node, { StateProps, OwnProps } from './Node';
-import { connect, ConnectedComponentClass } from 'react-redux';
+import React from 'react';
+import Node, { StateProps, OwnProps, DispatchProps } from './Node';
+import { connect } from 'react-redux';
 import { AppState } from 'store';
+import { displayNodes } from 'store/editor/actions';
 
-const mapStateToProps = (state: AppState, ownProps: OwnProps): StateProps => {
+const mapStateToProps = (state: AppState, ownProps: OwnProps) => {
     return {
         node: state.nodes[ownProps.id],
     };
 };
 
-export default function NodeHoc(
-    BaseComponent: React.ComponentClass
-): ConnectedComponentClass<typeof Component, OwnProps> {
-    class Test extends React.PureComponent<OwnProps & StateProps> {
-        public render(): JSX.Element {
+const mapDispatchToProps = {
+    displayNodes,
+};
+
+export default function NodeHoc(BaseComponent: React.ComponentClass) {
+    class Wrapper extends React.PureComponent<
+        OwnProps & StateProps & DispatchProps
+    > {
+        public render() {
             return (
                 <Node {...this.props}>
                     <BaseComponent {...this.props} />
@@ -22,5 +27,8 @@ export default function NodeHoc(
         }
     }
 
-    return connect<StateProps, {}, OwnProps, AppState>(mapStateToProps)(Test);
+    return connect<StateProps, DispatchProps, OwnProps, AppState>(
+        mapStateToProps,
+        mapDispatchToProps
+    )(Wrapper);
 }

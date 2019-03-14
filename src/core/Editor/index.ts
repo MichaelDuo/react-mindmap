@@ -1,4 +1,4 @@
-import Editor, { StateProps, DispatchProps } from './Editor';
+import Editor, { OwnProps, StateProps, DispatchProps } from './Editor';
 import { connect } from 'react-redux';
 import { AppState } from 'store';
 import { increaseCount } from 'store/editor/actions';
@@ -13,7 +13,8 @@ const mapDispatchToProps = {
     increaseCount,
 };
 
-export default connect<StateProps, DispatchProps, {}, AppState>(
+export type EditorProps = OwnProps;
+export default connect<StateProps, DispatchProps, OwnProps, AppState>(
     mapStateToProps,
     mapDispatchToProps
 )(Editor);

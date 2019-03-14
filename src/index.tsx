@@ -1,12 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import configStore from 'store';
-import Editor from 'core/Editor';
+import Editor, { EditorProps } from 'core/Editor';
 
 const store = configStore();
 
-export default (): JSX.Element => (
+type Props = EditorProps;
+
+export default (props: Props) => (
     <Provider store={store}>
-        <Editor />
+        <Editor {...props} />
     </Provider>
 );
