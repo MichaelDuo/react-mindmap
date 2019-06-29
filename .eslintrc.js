@@ -11,5 +11,6 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 0,
         '@typescript-eslint/no-empty-interface': 0,
         '@typescript-eslint/indent': 0, // confilict with prettier
+        '@typescript-eslint/no-explicit-any': 0,
     },
 };
