@@ -20,6 +20,6 @@ export default class Editor extends PureComponent<Props> {
 
     public render(): JSX.Element {
         // display all nodes in editor store
-        return <Svg>{this.getRootNode()}</Svg>;
+        return <div>{this.getRootNode()}</div>;
     }
 }

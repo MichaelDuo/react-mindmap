@@ -17,10 +17,10 @@ type Props = OwnProps & StateProps & DispatchProps;
 export default class Node extends PureComponent<Props> {
     public componentDidMount() {
         // push nodes to editor store
-        this.props.displayNodes(['nodeid']);
+        // this.props.displayNodes(['nodeid']);
     }
 
     public render() {
-        return <g transform={`translate(${0},${15})`}>{this.props.children}</g>;
+        return <div>{this.props.children}</div>;
     }
 }
